@@ -42,7 +42,7 @@ if __name__ == '__main__':
         passwords = passwords_file.read().splitlines()
         b_passwords = [password.encode(encoding=in_encoding) for password in passwords]
         passwords_file.close()
-        len_of_part = len(passwords) // process_number
+        len_of_part = len(passwords) // (process_number - 1)
         password_groups = [b_passwords[i:i + len_of_part] for i in range(0, len(b_passwords), len_of_part)]
         processes = []
         cur_time = time.time()
